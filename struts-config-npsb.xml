@@ -1,0 +1,738 @@
+ <!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<!--Author: Net Support Team-->
+<!--Project Name: Paymentmanagement - Explore More-->
+<!--Module Name: Payment -->
+
+<struts-config>
+
+	<!-- ============ Form Bean Definitions ============ -->
+	<!-- =============================================== -->
+	<form-beans>
+							<!--| ====================================================== | -->
+							<!--|        Paymentmanagement Form Beans  Start		| -->
+							<!--| ====================================================== | -->
+
+	    <form-bean name="NPSBOutgoingReversalForm" type="com.ibank.ibanking.npsb.formbean.NPSBOutgoingReversalForm"/>
+	    <form-bean name="nPSBIncomingApprovalScreenForm" type="com.ibank.ibanking.npsb.formbean.NPSBIncomingApprovalScreenForm"/>
+		<form-bean name="NPSBIncomingReversalForm" type="com.ibank.ibanking.npsb.formbean.NPSBIncomingReversalForm"/>
+		<form-bean name="bankSetUpForNPSBForm" type="com.ibank.ibanking.npsb.formbean.BankSetUpForNPSBForm"/>	
+		<form-bean name="statusReportofNPSBIncomingForm" type="com.ibank.ibanking.npsb.report.formbean.StatusReportofNPSBIncomingForm"/>
+		<form-bean name="statusReportofNPSBOutgoingForm" type="com.ibank.ibanking.npsb.report.formbean.StatusReportofNPSBOutgoingForm"/>		
+		<form-bean name="NPSBOutgoingTransactionReversalAuthorizationForm" type="com.ibank.ibanking.npsb.formbean.NPSBOutgoingTransactionReversalAuthorizationForm"/>
+		<form-bean name="NPSBOutgoingTransactionReversalRequestForm" type="com.ibank.ibanking.npsb.formbean.NPSBOutgoingTransactionReversalRequestForm"/>			
+		<form-bean name="NPSBIncomingTransactionReversalRequestForm" type="com.ibank.ibanking.npsb.formbean.NPSBIncomingTransactionReversalRequestForm"/>
+	    <form-bean name="NPSBIncomingTransactionReversalAuthorizationForm" type="com.ibank.ibanking.npsb.formbean.NPSBIncomingTransactionReversalAuthorizationForm"/>
+        <form-bean name="partyAccountDebitNpsbIncomingForm" type="com.ibank.ibanking.npsb.formbean.PartyAccountDebitNpsbIncomingForm"/>
+        <form-bean name="nPSBEremitTransactionStatusUpdateForm" type="com.ibank.ibanking.npsb.formbean.NPSBEremitTransactionStatusUpdateForm"/>
+	       
+	</form-beans>
+
+	<!-- ============ Action Mapping Definitions ============ -->
+	<!-- ==================================================== -->
+    <action-mappings>
+    
+    <!-- Status Report of NPSB Incoming Authorization -->
+	<!-- =========================================== -->
+	 <action path="/nPsbIncomingTransactionReversalAuthorization"
+        type="com.ibank.ibanking.npsb.action.NPSBIncomingTransactionReversalAuthorizationAction"
+        name="NPSBIncomingTransactionReversalAuthorizationForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBIncomingTransactionReversalAuthorization.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBIncomingTransactionReversalAuthorization.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBIncomingTransactionReversalAuthorization.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+    	 <action path="/searchnpsbincomingtransactionreversalauthorization"
+        type="com.ibank.ibanking.npsb.action.NPSBIncomingTransactionReversalAuthorizationAction"
+        name="NPSBIncomingTransactionReversalAuthorizationForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBIncomingTransactionReversalAuthorization.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBIncomingTransactionReversalAuthorization.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBIncomingTransactionReversalAuthorization.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+     <action path="/executenpsbincomingtransactionreversalauthorization"
+        type="com.ibank.ibanking.npsb.action.NPSBIncomingTransactionReversalAuthorizationAction"
+        name="NPSBIncomingTransactionReversalAuthorizationForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBIncomingTransactionReversalAuthorization.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBIncomingTransactionReversalAuthorization.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBIncomingTransactionReversalAuthorization.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+        <action path="/updatenpsbincomingtransactionreversalauthorization"
+   type="com.ibank.ibanking.npsb.action.NPSBIncomingTransactionReversalAuthorizationAction"
+        name="NPSBIncomingTransactionReversalAuthorizationForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBIncomingTransactionReversalAuthorization.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBIncomingTransactionReversalAuthorization.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBIncomingTransactionReversalAuthorization.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+         <action path="/cancelnpsbincomingtransactionreversalauthorization"
+        type="com.ibank.ibanking.npsb.action.NPSBOutgoingTransactionReversalAuthorizationAction"
+        name="NPSBOutgoingTransactionReversalAuthorizationForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBIncomingTransactionReversalAuthorization.jsp">
+        <forward name="success" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBIncomingTransactionReversalAuthorization.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+    
+    	<!-- ============NPSBIncomingTransactionReversalRequest ============ -->
+	<!-- ==================================================== -->
+    <action path="/nPSBIncomingTransactionReversalRequest"
+        type="com.ibank.ibanking.npsb.action.NPSBIncomingTransactionReversalRequestAction"
+        name="NPSBIncomingTransactionReversalRequestForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBIncomingTransactionReversalRequest.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBIncomingTransactionReversalRequest.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBIncomingTransactionReversalRequest.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+       <action path="/searchNPSBIncomingTransactionReversalRequest"
+        type="com.ibank.ibanking.npsb.action.NPSBIncomingTransactionReversalRequestAction"
+        name="NPSBIncomingTransactionReversalRequestForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBIncomingTransactionReversalRequest.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBIncomingTransactionReversalRequest.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBIncomingTransactionReversalRequest.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+    
+    
+       <action path="/updateNPSBIncomingTransactionReversalRequest"
+        type="com.ibank.ibanking.npsb.action.NPSBIncomingTransactionReversalRequestAction"
+        name="NPSBIncomingTransactionReversalRequestForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBIncomingTransactionReversalRequest.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBIncomingTransactionReversalRequest.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBIncomingTransactionReversalRequest.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+    
+           <action path="/executeNPSBIncomingTransactionReversalRequest"
+        type="com.ibank.ibanking.npsb.action.NPSBIncomingTransactionReversalRequestAction"
+        name="NPSBIncomingTransactionReversalRequestForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBIncomingTransactionReversalRequest.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBIncomingTransactionReversalRequest.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBIncomingTransactionReversalRequest.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action> 
+         <action path="/cancelNPSBOutgoingTransactionReversalRequest"
+        type="com.ibank.ibanking.npsb.action.NPSBIncomingTransactionReversalAuthorizationAction"
+        name="NPSBIncomingTransactionReversalRequestForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBIncomingTransactionReversalRequest.jsp">
+        <forward name="success" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBIncomingTransactionReversalRequest.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+
+    
+    	<!-- ============NPSBOutgoingTransactionReversalRequest ============ -->
+	<!-- ==================================================== -->
+    <action path="/nPSBOutgoingTransactionReversalRequest"
+        type="com.ibank.ibanking.npsb.action.NPSBOutgoingTransactionReversalRequestAction"
+        name="NPSBOutgoingTransactionReversalRequestForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBOutgoingTransactionReversalRequest.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBOutgoingTransactionReversalRequest.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBOutgoingTransactionReversalRequest.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+    	 <action path="/searchNPSBOutgoingTransactionReversalRequest"
+        type="com.ibank.ibanking.npsb.action.NPSBOutgoingTransactionReversalRequestAction"
+        name="NPSBOutgoingTransactionReversalRequestForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBOutgoingTransactionReversalRequest.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBOutgoingTransactionReversalRequest.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBOutgoingTransactionReversalRequest.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+     <action path="/updateNPSBOutgoingTransactionReversalRequest"
+        type="com.ibank.ibanking.npsb.action.NPSBOutgoingTransactionReversalRequestAction"
+        name="NPSBOutgoingTransactionReversalRequestForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBOutgoingTransactionReversalRequest.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBOutgoingTransactionReversalRequest.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBOutgoingTransactionReversalRequest.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+       <action path="/executeNPSBOutgoingTransactionReversalRequest"
+        type="com.ibank.ibanking.npsb.action.NPSBOutgoingTransactionReversalRequestAction"
+        name="NPSBOutgoingTransactionReversalRequestForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBOutgoingTransactionReversalRequest.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBOutgoingTransactionReversalRequest.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBOutgoingTransactionReversalRequest.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+         <action path="/cancelNPSBOutgoingTransactionReversalRequest"
+        type="com.ibank.ibanking.npsb.action.NPSBOutgoingTransactionReversalRequestAction"
+        name="NPSBOutgoingTransactionReversalRequestForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBOutgoingTransactionReversalRequest.jsp">
+        <forward name="success" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBOutgoingTransactionReversalRequest.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+	  	<!-- Status Report of NPSB Outgoing Authorization -->
+	<!-- =========================================== -->
+	 <action path="/npsboutgoingtransactionreversalauthorization"
+        type="com.ibank.ibanking.npsb.action.NPSBOutgoingTransactionReversalAuthorizationAction"
+        name="NPSBOutgoingTransactionReversalAuthorizationForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBOutgoingTransactionReversalAuthorization.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBOutgoingTransactionReversalAuthorization.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBOutgoingTransactionReversalAuthorization.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+    	 <action path="/searchnpsboutgoingtransactionreversalauthorization"
+        type="com.ibank.ibanking.npsb.action.NPSBOutgoingTransactionReversalAuthorizationAction"
+        name="NPSBOutgoingTransactionReversalAuthorizationForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBOutgoingTransactionReversalAuthorization.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBOutgoingTransactionReversalAuthorization.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBOutgoingTransactionReversalAuthorization.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+     <action path="/executenpsboutgoingtransactionreversalauthorization"
+        type="com.ibank.ibanking.npsb.action.NPSBOutgoingTransactionReversalAuthorizationAction"
+        name="NPSBOutgoingTransactionReversalAuthorizationForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBOutgoingTransactionReversalAuthorization.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBOutgoingTransactionReversalAuthorization.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBOutgoingTransactionReversalAuthorization.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+         <action path="/cancelnpsboutgoingtransactionreversalauthorization"
+        type="com.ibank.ibanking.npsb.action.NPSBOutgoingTransactionReversalAuthorizationAction"
+        name="NPSBOutgoingTransactionReversalAuthorizationForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBOutgoingTransactionReversalAuthorization.jsp">
+        <forward name="success" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBOutgoingTransactionReversalAuthorization.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+	
+	<!-- NPSB Outgoing Reversal Start -->
+	<!-- ============================ -->
+
+   <action path="/NPSBOutgoingReversal"
+        type="com.ibank.ibanking.npsb.action.NPSBOutgoingReversalAction"
+        name="NPSBOutgoingReversalForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBOutgoingReversal.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBOutgoingReversal.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBOutgoingReversal.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+	<action path="/reversalDetailsOfNPSBOutgoingReversal"
+        type="com.ibank.ibanking.npsb.action.NPSBOutgoingReversalAction"
+        name="NPSBOutgoingReversalForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBOutgoingReversal.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBOutgoingReversalDetails.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBOutgoingReversalDetails.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+	<action path="/searchReversalDetailsOfNPSBOutgoingReversal"
+        type="com.ibank.ibanking.npsb.action.NPSBOutgoingReversalAction"
+        name="NPSBOutgoingReversalForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBOutgoingReversalDetails.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBOutgoingReversalDetails.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBOutgoingReversalDetails.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+	<action path="/executeNPSBOutgoingReversal"
+        type="com.ibank.ibanking.npsb.action.NPSBOutgoingReversalAction"
+        name="NPSBOutgoingReversalForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBOutgoingReversal.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBOutgoingReversal.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBOutgoingReversal.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>	
+	<action path="/cancelNPSBOutgoingReversal"
+        type="com.ibank.ibanking.npsb.action.NPSBOutgoingReversalAction"
+        name="NPSBOutgoingReversalForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBOutgoingReversal.jsp">
+		<forward name="success" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBOutgoingReversal.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/IBankingMenu.do"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>	
+	
+
+	<!-- NPSB Outgoing Reversal End -->
+	<!-- ========================== -->
+	
+	
+		<!-- NPSB Outgoing Reversal Start -->
+	<!-- ============================ -->
+
+   <action path="/nPSBIncomingApprovalScreen"
+        type="com.ibank.ibanking.npsb.action.NPSBIncomingApprovalScreenAction"
+        name="nPSBIncomingApprovalScreenForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBIncomingApprovalScreen.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBIncomingApprovalScreen.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBIncomingApprovalScreen.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+	  <action path="/processNPSBIncomingApprovalScreen"
+        type="com.ibank.ibanking.npsb.action.NPSBIncomingApprovalScreenAction"
+        name="nPSBIncomingApprovalScreenForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBIncomingApprovalScreen.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBIncomingApprovalScreen.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBIncomingApprovalScreen.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+	  <action path="/statusChangeNPSBIncomingApprovalScreen"
+        type="com.ibank.ibanking.npsb.action.NPSBIncomingApprovalScreenAction"
+        name="nPSBIncomingApprovalScreenForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBIncomingApprovalScreen.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBIncomingApprovalScreen.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBIncomingApprovalScreen.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+	  <action path="/executeNPSBIncomingApprovalScreen"
+        type="com.ibank.ibanking.npsb.action.NPSBIncomingApprovalScreenAction"
+        name="nPSBIncomingApprovalScreenForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBIncomingApprovalScreen.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBIncomingApprovalScreen.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBIncomingApprovalScreen.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+	
+	
+	<action path="/cancelNPSBIncomingApprovalScreen"
+        type="com.ibank.ibanking.npsb.action.NPSBIncomingApprovalAction"
+        name="nPSBIncomingApprovalScreenForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBIncomingApprovalScreen.jsp">
+		<forward name="success" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBIncomingApprovalScreen.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/IBankingMenu.do"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>	
+	
+
+	<!-- NPSB Outgoing Reversal End -->
+	<!-- ========================== -->
+	
+	
+	<!-- NPSB Incoming Reversal Start -->
+	<!-- ============================ -->
+
+   <action path="/NPSBIncomingReversal"
+        type="com.ibank.ibanking.npsb.action.NPSBIncomingReversalAction"
+        name="NPSBIncomingReversalForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBIncomingReversal.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBIncomingReversal.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBIncomingReversal.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+	<action path="/reversalDetailsOfNPSBIncomingReversal"
+        type="com.ibank.ibanking.npsb.action.NPSBIncomingReversalAction"
+        name="NPSBIncomingReversalForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBIncomingReversal.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBIncomingReversalDetails.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBIncomingReversalDetails.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+	<action path="/searchReversalDetailsOfNPSBIncomingReversal"
+        type="com.ibank.ibanking.npsb.action.NPSBIncomingReversalAction"
+        name="NPSBIncomingReversalForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBIncomingReversalDetails.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBIncomingReversalDetails.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBIncomingReversalDetails.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+	<action path="/executeNPSBIncomingReversal"
+        type="com.ibank.ibanking.npsb.action.NPSBIncomingReversalAction"
+        name="NPSBIncomingReversalForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBIncomingReversal.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBIncomingReversal.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBIncomingReversal.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>	
+	<action path="/cancelNPSBIncomingReversal"
+        type="com.ibank.ibanking.npsb.action.NPSBIncomingReversalAction"
+        name="NPSBIncomingReversalForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBIncomingReversal.jsp">
+		<forward name="success" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBIncomingReversal.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/IBankingMenu.do"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>	
+	
+
+	<!-- NPSB Incoming Reversal End -->
+	<!-- ========================== -->
+	
+	
+	
+	<!-- Bank Set Up For NPSB Start -->
+	<!-- =========================== -->
+
+   <action path="/bankSetUpForNPSB"
+        type="com.ibank.ibanking.npsb.action.BankSetUpForNPSBAction"
+        name="bankSetUpForNPSBForm"
+        validate="false"
+        input="/pages/ibanking/npsb/BankSetUpForNPSB.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/BankSetUpForNPSB.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/BankSetUpForNPSB.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+	<action path="/executeBankSetUpForNPSB"
+        type="com.ibank.ibanking.npsb.action.BankSetUpForNPSBAction"
+        name="bankSetUpForNPSBForm"
+        validate="false"
+        input="/pages/ibanking/npsb/BankSetUpForNPSB.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/BankSetUpForNPSB.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/BankSetUpForNPSB.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+ <action path="/cancelBankSetUpForNPSB"
+        type="com.ibank.ibanking.npsb.action.BankSetUpForNPSBAction"
+        name="bankSetUpForNPSBForm"
+        validate="false"
+        input="/pages/ibanking/npsb/BankSetUpForNPSB.jsp">
+        <forward name="success" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/BankSetUpForNPSB.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/IBankingMenu.do"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+	
+	<!-- Bank Set Up For NPSB End -->
+	<!-- ============================ -->
+	
+	
+	
+	<!-- Status Report of NPSB Incoming Report Start -->
+	<!-- ============================================ -->
+	
+	<action path="/statusReportofNPSBIncoming"
+        type="com.ibank.ibanking.npsb.report.action.StatusReportofNPSBIncomingAction"
+        name="statusReportofNPSBIncomingForm"
+        validate="false"
+        input="/pages/ibanking/npsb/report/StatusReportofNPSBIncoming.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/report/StatusReportofNPSBIncoming.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/report/StatusReportofNPSBIncoming.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+	<action path="/executeStatusReportofNPSBIncoming"
+        type="com.ibank.ibanking.npsb.report.action.StatusReportofNPSBIncomingAction"
+        name="statusReportofNPSBIncomingForm"
+        validate="false"
+        input="/pages/ibanking/npsb/report/StatusReportofNPSBIncoming.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/report/StatusReportofNPSBIncoming.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/report/StatusReportofNPSBIncoming.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+	<action path="/excelStatusReportofNPSBIncoming"
+        type="com.ibank.ibanking.npsb.report.action.StatusReportofNPSBIncomingAction"
+        name="statusReportofNPSBIncomingForm"
+        validate="false"
+        input="/pages/ibanking/npsb/report/StatusReportofNPSBIncoming.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/report/StatusReportofNPSBIncoming.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/report/StatusReportofNPSBIncoming.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>	
+	<action path="/cancelStatusReportofNPSBIncoming"
+        type="com.ibank.ibanking.npsb.report.action.StatusReportofNPSBIncomingAction"
+        name="statusReportofNPSBIncomingForm"
+        validate="false"
+        input="/pages/ibanking/npsb/report/StatusReportofNPSBIncoming.jsp">
+		<!--<forward name="success" path="/logInMyBankMenu.do"/>-->
+		<forward name="success" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/report/StatusReportofNPSBIncoming.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/IBankingMenu.do"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+	
+	
+	<!-- Status Report of NPSB Incoming Report End -->
+	<!-- ========================================== -->
+	
+  	<!-- Status Report of NPSB Outgoing Report Start -->
+	<!-- =========================================== -->
+	
+	<action path="/statusReportofNPSBOutgoing"
+        type="com.ibank.ibanking.npsb.report.action.StatusReportofNPSBOutgoingAction"
+        name="statusReportofNPSBOutgoingForm"
+        validate="false"
+        input="/pages/ibanking/npsb.report/StatusReportofNPSBOutgoing.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/report/StatusReportofNPSBOutgoing.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/report/StatusReportofNPSBOutgoing.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+		
+	<action path="/executeStatusReportofNPSBOutgoing"
+        type="com.ibank.ibanking.npsb.report.action.StatusReportofNPSBOutgoingAction"
+        name="statusReportofNPSBOutgoingForm"
+        validate="false"
+        input="/pages/ibanking/npsb/report/StatusReportofNPSBOutgoing.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/report/StatusReportofNPSBOutgoing.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/report/StatusReportofNPSBOutgoing.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+	<action path="/excelStatusReportofNPSBOutgoing"
+        type="com.ibank.ibanking.npsb.report.action.StatusReportofNPSBOutgoingAction"
+        name="statusReportofNPSBOutgoingForm"
+        validate="false"
+        input="/pages/ibanking/npsb/report/StatusReportofNPSBOutgoing.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/report/StatusReportofNPSBOutgoing.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/report/StatusReportofNPSBOutgoing.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+
+	
+	<action path="/cancelStatusReportofNPSBOutgoing"
+        type="com.ibank.ibanking.npsb.report.action.StatusReportofNPSBOutgoingAction"
+        name="statusReportofNPSBOutgoingForm"
+        validate="false"
+        input="/pages/ibanking/npsb/report/StatusReportofNPSBOutgoing.jsp">
+		<!--<forward name="success" path="/logInMyBankMenu.do"/>-->
+		<forward name="success" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/report/StatusReportofNPSBOutgoing.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/IBankingMenu.do"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+	
+	<!-- Status Report of NPSB Outgoing Report End -->
+	<!-- =========================================== -->
+	
+	
+	
+	
+	<!-- Party Account Debit for NPSB Incoming Start -->
+	<!-- ============================ -->
+
+   <action path="/partyAccountDebitNpsbIncoming"
+        type="com.ibank.ibanking.npsb.action.PartyAccountDebitNpsbIncomingAction"
+        name="partyAccountDebitNpsbIncomingForm"
+        validate="false"
+        input="/pages/ibanking/npsb/PartyAccountDebitNpsbIncoming.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/PartyAccountDebitNpsbIncoming.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/PartyAccountDebitNpsbIncoming.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+	<action path="/reversalDetailsOfPartyAccountDebitNpsbIncoming"
+        type="com.ibank.ibanking.npsb.action.PartyAccountDebitNpsbIncomingAction"
+        name="partyAccountDebitNpsbIncomingForm"
+        validate="false"
+        input="/pages/ibanking/npsb/PartyAccountDebitNpsbIncoming.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/PartyAccountDebitNpsbIncomingDetails.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/PartyAccountDebitNpsbIncomingDetails.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+	<action path="/searchReversalDetailsOfPartyAccountDebitNpsbIncoming"
+        type="com.ibank.ibanking.npsb.action.PartyAccountDebitNpsbIncomingAction"
+        name="partyAccountDebitNpsbIncomingForm"
+        validate="false"
+        input="/pages/ibanking/npsb/PartyAccountDebitNpsbIncomingDetails.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/PartyAccountDebitNpsbIncomingDetails.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/PartyAccountDebitNpsbIncomingDetails.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+	<action path="/executePartyAccountDebitNpsbIncoming"
+        type="com.ibank.ibanking.npsb.action.PartyAccountDebitNpsbIncomingAction"
+        name="partyAccountDebitNpsbIncomingForm"
+        validate="false"
+        input="/pages/ibanking/npsb/PartyAccountDebitNpsbIncoming.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/PartyAccountDebitNpsbIncoming.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/PartyAccountDebitNpsbIncoming.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>	
+	<action path="/cancelPartyAccountDebitNpsbIncoming"
+        type="com.ibank.ibanking.npsb.action.PartyAccountDebitNpsbIncomingAction"
+        name="partyAccountDebitNpsbIncomingForm"
+        validate="false"
+        input="/pages/ibanking/npsb/PartyAccountDebitNpsbIncoming.jsp">
+		<forward name="success" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/PartyAccountDebitNpsbIncoming.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/IBankingMenu.do"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>	
+	
+
+	<!-- Party Account Debit for NPSB Incoming End -->
+	<!-- ========================== -->
+	
+	
+	
+	<!-- NPSB eRemit Transaction Status Update Start--> 
+	<!-- ==================================== -->
+	
+	
+	<action path="/nPSBEremitTransactionStatusUpdate"
+        type="com.ibank.ibanking.npsb.action.NPSBEremitTransactionStatusUpdateAction"
+        name="nPSBEremitTransactionStatusUpdateForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBEremitTransactionStatusUpdate.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBEremitTransactionStatusUpdate.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBEremitTransactionStatusUpdate.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+	<action path="/eremitDetailsOfNPSBTransactionStatusUpdate"
+        type="com.ibank.ibanking.npsb.action.NPSBEremitTransactionStatusUpdateAction"
+        name="nPSBEremitTransactionStatusUpdateForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBEremitTransactionStatusUpdate.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBEremitTransactionStatusUpdateDetails.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBEremitTransactionStatusUpdateDetails.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+	<action path="/searchNPSBEremitTransactionStatusUpdate"
+        type="com.ibank.ibanking.npsb.action.NPSBEremitTransactionStatusUpdateAction"
+        name="nPSBEremitTransactionStatusUpdateForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBEremitTransactionStatusUpdateDetails.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBEremitTransactionStatusUpdateDetails.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBEremitTransactionStatusUpdateDetails.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>
+	<action path="/executeNPSBEremitTransactionStatusUpdate"
+        type="com.ibank.ibanking.npsb.action.NPSBEremitTransactionStatusUpdateAction"
+        name="nPSBEremitTransactionStatusUpdateForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBEremitTransactionStatusUpdate.jsp">
+        <forward name="success" path="/pages/ibanking/npsb/NPSBEremitTransactionStatusUpdate.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBEremitTransactionStatusUpdate.jsp"/>
+        <forward name="sessionExpire" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>	
+	<action path="/cancelNPSBEremitTransactionStatusUpdate"
+        type="com.ibank.ibanking.npsb.action.NPSBEremitTransactionStatusUpdateAction"
+        name="nPSBEremitTransactionStatusUpdateForm"
+        validate="false"
+        input="/pages/ibanking/npsb/NPSBEremitTransactionStatusUpdate.jsp">
+		<forward name="success" path="/pages/menu/IBankingMenu.jsp"/>
+        <forward name="failure" path="/pages/ibanking/npsb/NPSBEremitTransactionStatusUpdate.jsp"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+        <forward name="sessionMyBankMenu" path="/IBankingMenu.do"/>
+        <forward name="fatalError" path = "/index.jsp"/>
+    </action>	
+	
+		
+	<!-- NPSB eRemit Transaction Status Update End--> 
+	<!-- ==================================== -->
+		
+		
+	</action-mappings>
+	
+</struts-config>
